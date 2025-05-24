@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <title>Doplňovačka</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+       background-image: url("pozadi.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+      color: #222;
+    }
+    .container {
+      max-width: 700px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input[type="text"] {
+      border: 1px solid #ccc;
+      padding: 4px 8px;
+      font-size: 1rem;
+      width: 150px;
+      margin: 0 4px;
+      border-radius: 4px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 25px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background-color: #4CAF50;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <p>
+      Teď už pryč od toho, potom bylo takový zvláštní období, který tak nějak se táhlo dlouho docela dost. Mezitím jsi se stihla rozejít s pajikem a spousty hodně jiných věcí. Než 
+      <input type="text" id="word1" placeholder="doplnit datum" />
+      přišla pauza, což nebylo dobrý ani pro jednu z nás, ale zvládneme to. No a jsme už na konci teď, kdy máš narozeniny. Tak všechno nejlepší.
+    </p>
+
+    <button onclick="checkAnswer()">Pokračovat</button>
+  </div>
+
+  <script>
+    function checkAnswer() {
+      const answer1 = document.getElementById('word1').value.trim();
+      if(answer1 === '25.4' || answer1 === '25.04' || answer1.toLowerCase() === '25. dubna') {
+        // Správně, pokračuj na další stránku
+        window.location.href = 'do.html'; // Změň adresu podle další stránky
+      } else {
+        alert('Zkus to ještě jednou, není to správně.');
+      }
+    }
+  </script>
+</body>
+</html>

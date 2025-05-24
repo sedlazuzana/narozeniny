@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vítej!</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('pozadi.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+    }
+    .overlay {
+      background-color: rgba(255, 255, 255, 0.85);
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .container {
+      text-align: center;
+      padding: 40px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    }
+    h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+    input[type="text"] {
+      padding: 10px;
+      font-size: 1em;
+      width: 200px;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      transition: border 0.3s;
+    }
+    input[type="text"].wrong {
+      border: 2px solid red;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1em;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <div class="container">
+      <h1>Vítej, vítej</h1>
+      <p>(je to ode mě, takže v tom bude nějaká kulišárna)</p>
+      <input type="text" id="codeInput" placeholder="Zadej heslo..." />
+      <br />
+      <button id="continueBtn" onclick="goToNextPage()">Pokračovat</button>
+    </div>
+  </div>
+
+  <script>
+    const correctCode = "16.11";
+    const input = document.getElementById("codeInput");
+    const button = document.getElementById("continueBtn");
+
+    input.addEventListener("input", () => {
+      if (input.value.trim() === correctCode) {
+        input.classList.remove("wrong");
+        button.style.display = "inline-block";
+      } else {
+        input.classList.add("wrong");
+        button.style.display = "none";
+      }
+    });
+
+    function goToNextPage() {
+      window.location.href = "2.html"; // Tady později napojíme další stránku
+    }
+  </script>
+</body>
+</html>

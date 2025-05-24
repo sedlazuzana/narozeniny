@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Písmeno Í</title>
+<style>
+  body {
+    font-family: 'Arial', sans-serif;
+    background: url('pozadi.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 20px;
+    color: #222;
+  }
+  .overlay {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 60px 40px;
+    max-width: 300px;
+    margin: 100px auto;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.25);
+    text-align: center;
+  }
+  .overlay h1 {
+    font-size: 130px;
+    margin: 0 0 40px 0;
+    color: #3498db;
+    font-weight: bold;
+  }
+  button {
+    font-size: 22px;
+    padding: 15px 40px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  button:hover {
+    background-color: #2980b9;
+  }
+</style>
+</head>
+<body>
+  <div class="overlay">
+    <h1>Í</h1>
+    <button id="pokračovat">Pokračovat</button>
+  </div>
+
+  <script>
+    document.getElementById('pokračovat').addEventListener('click', () => {
+      window.location.href = '6.html'; // změň podle potřeby
+    });
+  </script>
+</body>
+</html>

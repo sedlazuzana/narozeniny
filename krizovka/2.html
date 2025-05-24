@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Doplňovačka</title>
+  <style>
+    body {
+      background-image: url("pozadi.jpg");
+      background-size: cover;
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+      padding: 50px;
+    }
+
+    .container {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 30px;
+      border-radius: 20px;
+      display: inline-block;
+      max-width: 600px;
+    }
+
+    input[type="text"] {
+      padding: 8px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      width: 250px;
+      margin: 0 10px;
+    }
+
+    input.wrong {
+      background-color: #ffdddd;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 25px;
+      font-size: 16px;
+      border-radius: 10px;
+      border: none;
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+    }
+
+    a#nextLink {
+      display: none;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <p>
+      Jedna dívka, duše bloudící a mysl zmatená, octla se na pouti své životní v nejistotě a tápání. Kroky její vedly cestami neznámými. A vskutku, činila podivuhodné pohyby údů dolních, jež nazývám
+      <input type="text" id="odpoved" placeholder="doplnit slovo" />
+      , což mohlo býti znamením únavy či zvláštního cvičení, kdož ví?
+    </p>
+    <button onclick="zkontroluj()">Potvrdit</button>
+
+    <br/>
+
+    <a id="nextLink" href="P.html">
+      <button>Pokračovat</button>
+    </a>
+  </div>
+
+  <script>
+    function zkontroluj() {
+      const input = document.getElementById("odpoved");
+      const spravne = "roztahování noh";
+      if (input.value.trim().toLowerCase() === spravne) {
+        input.classList.remove("wrong");
+        document.getElementById("nextLink").style.display = "inline";
+      } else {
+        input.classList.add("wrong");
+      }
+    }
+  </script>
+</body>
+</html>

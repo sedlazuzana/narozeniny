@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Doplňovačka - A</title>
+<style>
+  body {
+    font-family: 'Arial', sans-serif;
+    background: url('pozadi.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 20px;
+    color: #222;
+  }
+  .overlay {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 30px;
+    max-width: 700px;
+    margin: 50px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  }
+  textarea, input[type="text"] {
+    font-size: 18px;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  input[type="text"].wrong {
+    border-color: #e74c3c;
+    background-color: #fceaea;
+  }
+  input[type="text"].correct {
+    border-color: #27ae60;
+    background-color: #e0f7e9;
+  }
+  button {
+    margin-top: 20px;
+    font-size: 20px;
+    padding: 12px 25px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    opacity: 0.5;
+  }
+  button.enabled {
+    opacity: 1;
+  }
+</style>
+</head>
+<body>
+  <div class="overlay">
+    <p>
+      V tom se stalo, že dívka první, jež předtím činila podivuhodné 
+      "<input type="text" id="doplneni" placeholder="doplnit slovo zde" autocomplete="off" />",
+      s tímto cvičením přestala a počala, podobně jako Zuzana, pinkati si s míčkem. A tak se stalo, že se obě dívky poprvé spatřily, skrze hru nevinnou, jež osudy jejich propojila. Kdož ví, jaké nitky osudu se v tomto setkání spřádaly a kam až jejich společná pouť povede? Nechť čas ukáže.
+    </p>
+    <button id="pokračovat" disabled>Pokračovat</button>
+  </div>
+
+  <script>
+    const input = document.getElementById('doplneni');
+    const button = document.getElementById('pokračovat');
+    const correctWord = "roztahování noh";
+
+    input.addEventListener('input', () => {
+      if(input.value.trim().toLowerCase() === correctWord) {
+        input.classList.remove('wrong');
+        input.classList.add('correct');
+        button.disabled = false;
+        button.classList.add('enabled');
+      } else {
+        input.classList.remove('correct');
+        input.classList.add('wrong');
+        button.disabled = true;
+        button.classList.remove('enabled');
+      }
+    });
+
+    button.addEventListener('click', () => {
+      if(!button.disabled) {
+        window.location.href = 'Í.html'; // změň na cílovou stránku
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <title>Doplňovačka E</title>
+  <style>
+    body {
+       background-image: url("pozadi.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+      color: #fff;
+      font-family: sans-serif;
+      padding: 40px;
+      line-height: 1.6;
+    }
+    input.blank {
+      display: inline-block;
+      min-width: 80px;
+      margin: 0 4px;
+      background: transparent;
+      color: #fff;
+      border: none;
+      border-bottom: 2px solid #fff;
+      font-size: 1em;
+      padding: 2px 4px;
+    }
+    input.blank:focus {
+      outline: none;
+      border-bottom: 2px solid #0f0;
+    }
+    .button {
+      display: none;
+      margin-top: 40px;
+      padding: 12px 24px;
+      background-color: #fff;
+      color: #000;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+    #checkBtn {
+      margin-top: 40px;
+      padding: 12px 24px;
+      background-color: #0f0;
+      color: #000;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <p>
+    <input class="blank" type="text"> pro tebe nejtěžší období našeho vztahu, pro mě hodně učení novýho.
+    <input class="blank" type="text"> (úterý) crazy to den. Byly jsme v olmu na trzích, vyhlídkovém
+    <input class="blank" type="text"> a hlavně na <input class="blank" type="text">. Byly jsme tam s
+    <input class="blank" type="text">. Na městě jsme se <input class="blank" type="text">. Byl to úžasnej den.
+  </p>
+
+  <p>
+    Další den <input class="blank" type="text"> jsem udělala ten velkej krok já a přišla za tebou na
+    <input class="blank" type="text">. Tím začala naše série <input class="blank" type="text">. Za nedlouho jsme jeli do
+    <input class="blank" type="text"> — oooo mujjjj bože, to byl úžasnejjj den. Úplně. Jak v
+    <input class="blank" type="text"> jsem byla.
+  </p>
+
+  <p>
+    To kino, to nádraží, to prostě jsme se tak poslouchaly, to bylo kouzelný… nebo jak nám
+    <input class="blank" type="text">, to všechno bylo tak skvělyyyy.
+  </p>
+
+  <button id="checkBtn" onclick="checkAnswers()">Zkontrolovat</button>
+  <a class="button" id="continueBtn" href="j.html">Pokračovat</a>
+
+  <script>
+    const correctAnswers = [
+      "Venky", "18.12.", "kole", "bagetě", "Klárkou Hudečkovou",
+      "držely za ruce", "19.12.", "město", "lavička talk",
+      "kina", "obláčku", "ujel vlak"
+    ];
+
+    function checkAnswers() {
+      const inputs = document.querySelectorAll("input.blank");
+      let allCorrect = true;
+
+      inputs.forEach((input, index) => {
+        const userInput = input.value.trim().toLowerCase();
+        const correct = correctAnswers[index].toLowerCase();
+
+        if (userInput !== correct) {
+          input.style.borderBottom = "2px solid red";
+          allCorrect = false;
+        } else {
+          input.style.borderBottom = "2px solid lime";
+        }
+      });
+
+      if (allCorrect) {
+        document.getElementById("continueBtn").style.display = "inline-block";
+        document.getElementById("checkBtn").style.display = "none";
+      } else {
+        alert("Některé odpovědi jsou špatně. Zkus to prosím znovu.");
+      }
+    }
+  </script>
+
+</body>
+</html>
