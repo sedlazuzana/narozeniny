@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <title>Doplňovačka</title>
+  <style>
+    body {
+      background-image: url('pozadi.jpg');
+      background-size: cover;
+      background-position: center;
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+      padding: 40px;
+    }
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 30px;
+      max-width: 900px;
+      margin: auto;
+      border-radius: 15px;
+      font-size: 20px;
+    }
+    input {
+      width: 150px;
+      padding: 5px;
+      border-radius: 5px;
+      border: none;
+      text-align: center;
+      font-size: 18px;
+      margin: 0 5px;
+    }
+    .wrong {
+      background-color: #ffcccc;
+    }
+    .correct {
+      background-color: #ccffcc;
+    }
+    button {
+      margin-top: 30px;
+      padding: 12px 25px;
+      font-size: 18px;
+      background-color: #6a5acd;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      cursor: pointer;
+      display: none;
+    }
+    button:hover {
+      background-color: #836fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <p>
+      Lázně, no, no, no, bylo to fakt crazy. Nějak tam selhala komunikace, ale zvládly jsme to a přišla další rána 
+      <input type="text" id="nsc" placeholder="?????">. 
+      To pro mě bylo mnohem horší, protože jsem nevěděla, jak ti to vysvětlit, protože vím, že ty máš kolem sebe spousty lidí, furt si myslím, že je docela náš 
+      <input type="text" id="kamen" placeholder="??????????">. 
+      Ale učíme se s tím pracovat. Za což jsem velice ráda. Pak moje narozky to vezmu letem světem. Byly to asi jedny z nejhezčích narozenin, co jsem měla, diky tobě, děkuju. Fakt mi to udělalo radost. Pak se začaly blížit Vánoce. 
+      <input type="text" id="datum" placeholder="?.?."> mi přišla fakt nádhernááááááá slohovka, bože děkuju to bylo prostě uplně úžasný.
+    </p>
+    <button id="nextBtn" onclick="location.href='e.html'">Pokračovat</button>
+  </div>
+
+  <script>
+    const inputs = {
+      nsc: "nsc",
+      kamen: "kámen úrazu",
+      datum: "4.12."
+    };
+
+    const checkAnswers = () => {
+      let allCorrect = true;
+
+      for (const id in inputs) {
+        const el = document.getElementById(id);
+        if (el.value.trim().toLowerCase() === inputs[id].toLowerCase()) {
+          el.classList.remove("wrong");
+          el.classList.add("correct");
+        } else {
+          el.classList.remove("correct");
+          el.classList.add("wrong");
+          allCorrect = false;
+        }
+      }
+
+      document.getElementById("nextBtn").style.display = allCorrect ? "inline-block" : "none";
+    };
+
+    document.querySelectorAll("input").forEach(input => {
+      input.addEventListener("input", checkAnswers);
+    });
+  </script>
+</body>
+</html>

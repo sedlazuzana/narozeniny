@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <title>Stránka SE</title>
+  <style>
+    body, html {
+      margin: 0; padding: 0; height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+       background-image: url("pozadi.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+      color: white;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+      flex-direction: column;
+    }
+    .big-letters {
+      position: absolute;
+      font-size: 25vw;
+      font-weight: bold;
+      color: rgba(255, 255, 255, 0.1);
+      user-select: none;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      letter-spacing: 2vw;
+    }
+    button {
+      z-index: 10;
+      padding: 15px 40px;
+      font-size: 1.3rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      background-color: white;
+      color: black;
+      box-shadow: 0 0 8px rgba(0,0,0,0.3);
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #ddd;
+    }
+  </style>
+</head>
+<body>
+  <div class="big-letters">SE</div>
+  <button onclick="goNext()">Pokračovat</button>
+
+  <script>
+    function goNext() {
+      window.location.href = '10.html'; // Změň podle cílové stránky
+    }
+  </script>
+</body>
+</html>

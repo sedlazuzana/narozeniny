@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Doplňovačka</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: url('pozadi.jpg') no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      padding: 40px;
+      color: #222;
+    }
+    .overlay {
+      background: rgba(255, 255, 255, 0.92);
+      padding: 40px;
+      max-width: 800px;
+      margin: auto;
+      border-radius: 15px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.3);
+    }
+    input {
+      width: 100px;
+      font-size: 16px;
+      padding: 5px;
+      margin: 0 5px;
+      border: 2px solid #aaa;
+      border-radius: 5px;
+      text-align: center;
+    }
+    input.wrong {
+      border-color: red;
+      background: #ffe5e5;
+    }
+    button {
+      display: none;
+      margin-top: 30px;
+      font-size: 20px;
+      padding: 10px 25px;
+      background-color: #27ae60;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #1e8449;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <p>
+      No nic <input id="i1" /> přestanu blbnout a stačilo té staročeštiny. Ikkik, že ji miluješ. 
+      No, první trenaly byly crazy začala jsem ti říkat 180 stupňů, bo jsi udělala provaz nebo co si. 
+      No jo byl srpen už jsme se párkrát viděli a já z tebe cítíla dobrou <input id="i2" />. 
+      <input id="i3" /> to mega potahalo asi ti tak zase začnu říkat. 
+      Začala jsem se k tobě přibližovat a přišlo <input id="i4" />. 
+      To bylo celkem crazy pro tebe, ale neboj fitly jsme to a to mi dalo možnost být ještě víc close k tobě. 
+      Začaly první zápasy ty jsi potřebovala pomoc, takže vyskytla moje maličkost. 
+      Říkala jsi mi <input id="i5" />, to ti neodpustím. 
+      Začaly jsme se pomalu bavit na trenalech. Psaly jsme si hlavně o borcích, ale 
+      <input id="i6" /> jsi čekala na taťku. 
+      Já ti něco říkala o sobě, což bylo po dlouhé době, co jsem se někomu otevřela. 
+      Bylo to crazy fakt hodně, bo jsem tě znala pár dní a řekla jsem ti toho v celku dost, 
+      ale tobě se tak hrozně dobře povídá. 
+      Tím jsme si začaly psát o víc <input id="i7" /> věcech. 
+      Pak přisly <input id="i8" />. To bylo crazy fakt hodně, náš první problém.
+    </p>
+    <button id="next">Pokračovat</button>
+  </div>
+
+  <script>
+    const answers = ["bejb", "auru", "vrtal", "postavení", "zubi", "3.9.", "deep", "lázně"];
+    const inputs = answers.map((_, i) => document.getElementById(`i${i + 1}`));
+    const nextButton = document.getElementById('next');
+
+    inputs.forEach(input => {
+      input.addEventListener('input', checkAnswers);
+    });
+
+    function checkAnswers() {
+      let allCorrect = true;
+      inputs.forEach((input, index) => {
+        if (input.value.trim() === answers[index]) {
+          input.classList.remove('wrong');
+        } else {
+          input.classList.add('wrong');
+          allCorrect = false;
+        }
+      });
+      nextButton.style.display = allCorrect ? 'inline-block' : 'none';
+    }
+
+    nextButton.addEventListener('click', () => {
+      window.location.href = 'V.html'; // přesměrování na další stránku
+    });
+  </script>
+</body>
+</html>

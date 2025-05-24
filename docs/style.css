@@ -1,0 +1,146 @@
+/* Základní styly */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('pozadi.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+h1 {
+    color: #d6336c; /* Růžová barva pro nadpis */
+}
+
+.crossword-container {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+/* Styly pro legendu */
+.clues {
+    text-align: left;
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+}
+
+.clues h2 {
+    margin-top: 0;
+    color: #495057;
+}
+
+.clues ol {
+    padding-left: 20px;
+    margin: 0;
+}
+
+/* Styly pro mřížku */
+.crossword-grid table {
+    border-collapse: collapse;
+}
+
+.crossword-grid td {
+    padding: 2px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.crossword-grid input {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-transform: uppercase;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.crossword-grid input:focus {
+    border-color: #d6336c;
+}
+
+.tajenka-letter {
+    background-color: #a5d8ff; /* Světle modrá jako na fotce */
+    border-radius: 4px;
+}
+
+/* Styly pro ovládací prvky */
+.controls {
+    margin-top: 25px;
+}
+
+button, #continue-btn {
+    padding: 12px 25px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    background-color: #28a745;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+button:hover, #continue-btn:hover {
+    background-color: #218838;
+}
+
+#continue-btn {
+    background-color: #007bff;
+    text-decoration: none;
+}
+
+#continue-btn:hover {
+    background-color: #0056b3;
+}
+
+.hidden {
+    display: none;
+}
+
+#result-message {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    min-height: 25px;
+}
+
+.correct {
+    color: #28a745;
+}
+
+.incorrect {
+    color: #dc3545;
+}
+
+.secret-word {
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#tajenka-result {
+    letter-spacing: 5px;
+    color: #d6336c;
+    background: #f0f0f0;
+    padding: 5px 10px;
+    border-radius: 5px;
+}

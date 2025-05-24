@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <title>Doplňovačka</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background-image: url("pozadi.jpg");
+      background-size: cover;
+      background-position: center;
+      font-family: 'Georgia', serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+    }
+    .overlay {
+      background-color: rgba(0,0,0,0.75);
+      padding: 40px 60px;
+      border-radius: 20px;
+      max-width: 800px;
+      line-height: 1.6;
+    }
+    input[type="text"] {
+      font-family: 'Georgia', serif;
+      font-size: 1.1em;
+      padding: 5px 8px;
+      border-radius: 5px;
+      border: 2px solid #ccc;
+      width: 140px;
+      margin: 0 5px;
+      transition: border-color 0.3s ease;
+    }
+    input[type="text"].error {
+      border-color: #ff4c4c;
+      background-color: #ffe6e6;
+    }
+    button {
+      margin-top: 25px;
+      font-size: 18px;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 10px;
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      display: block;
+    }
+    button:hover {
+      background-color: #3e9441;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <p>
+      Nuže, nechť se vypráví jiný příběh, o dívce 
+      <input type="text" id="word1" /> , jež v bloudění svém nalezla směr a osud svůj.
+    </p>
+    <p>
+      Na straně druhé, kde stíny nejistoty ustupovaly světlu naděje, kráčela 
+      <input type="text" id="word2" /> , myslí zmatená a srdcem ztracená. Avšak i v tomto tápání počala nalézati cestu svou, směr, jímž se ubírati. Po boku jí scházel druh, přítel, duše spřízněná. Octla se vskutku v nesnázích velikých a nevěděla, kudy kam. I rostla pomalu, v tichosti a samotě, čekajíc na čas a prostor, kdy osud jí někoho do cesty přivede.
+    </p>
+    <button onclick="checkAnswers()">Pokračovat</button>
+
+
+  </div>
+
+  
+  <script>
+    function checkAnswers() {
+      const word1 = document.getElementById('word1');
+      const word2 = document.getElementById('word2');
+      let valid = true;
+
+      const correctAnswers = {
+        word1: ['Zuzaně', 'zuzaně'],
+        word2: ['Zuzana', 'zuzana']
+      };
+
+      if (!correctAnswers.word1.includes(word1.value.trim())) {
+        word1.classList.add('error');
+        valid = false;
+      } else {
+        word1.classList.remove('error');
+      }
+
+      if (!correctAnswers.word2.includes(word2.value.trim())) {
+        word2.classList.add('error');
+        valid = false;
+      } else {
+        word2.classList.remove('error');
+      }
+
+      if (valid) {
+        window.location.href = "D.html";
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <title>Doplňovačka</title>
+  <style>
+    body {
+       background-image: url("pozadi.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      max-width: 700px;
+      margin: auto;
+      line-height: 1.6;
+    }
+    input[type="text"] {
+      width: 100px;
+      font-size: 1rem;
+      padding: 3px 5px;
+      margin: 0 3px;
+      border-radius: 5px;
+      border: none;
+      outline: none;
+      text-align: center;
+      background-color: #222;
+      color: #fff;
+      border-bottom: 2px solid #888;
+    }
+    button {
+      display: block;
+      margin: 30px auto 0;
+      padding: 15px 40px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      background-color: white;
+      color: black;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #ddd;
+    }
+  </style>
+</head>
+<body>
+
+  <p>
+    Pak kamo, začala éra, kdy jsi mi brutalneeeee chyběla. Když jsi byla na
+    <input type="text" id="word1" /> nebo
+    <input type="text" id="word2" />.
+    <input type="text" id="word3" /> no no, ta
+    <input type="text" id="word4" />
+    to bylo crazy, hodně to bolelo hodně jakože brutálně nás obě, ale spolu jsme to překonali a ještě spousty překonáme. Ikdyž teď přijde část, kterou moc nemám ráda, ale pořád je to součást našeho vztahu, takže si o tom rychle povíme. No, to jak si to áčko myslelo, to že jsem teplá, pak že i ty. Nevím, co k tomu moc říct, ale vím, že tě to zasáhlo, což mě mrzí hodne. Nejradši bych jim rozbila hubu, ale to by bylo asi ještě horší. Já vím, že to pravda není, a lidi co potřebuju, aby to věděli tak to ví, takže to nevnímám, ale mrzí mě to, že si to mysleli i o tobě, omlouvám se.
+  </p>
+
+  <button onclick="checkAnswers()">Pokračovat</button>
+
+  <script>
+    function checkAnswers() {
+      const answers = {
+        word1: "chatě",
+        word2: "lyžáku",
+        word3: "Lyžák",
+        word4: "důvěra"
+      };
+
+      let allCorrect = true;
+
+      for (const id in answers) {
+        const userInput = document.getElementById(id).value.trim();
+        if (userInput !== answers[id]) {
+          allCorrect = false;
+          break;
+        }
+      }
+
+      if (allCorrect) {
+        window.location.href = 'se.html';
+      } else {
+        alert("Některé odpovědi nejsou správné. Zkontroluj si je prosím znovu.");
+      }
+    }
+  </script>
+</body>
+</html>

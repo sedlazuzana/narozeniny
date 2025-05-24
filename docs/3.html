@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <title>Doplňovačka 2</title>
+  <style>
+    body {
+      background-image: url("pozadi.jpg");
+      background-size: cover;
+      font-family: Georgia, serif;
+      color: white;
+      padding: 40px;
+      text-align: justify;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 40px;
+      border-radius: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    input {
+      border: none;
+      border-bottom: 2px solid white;
+      background-color: transparent;
+      color: white;
+      font-size: 16px;
+      width: 120px;
+      margin: 0 5px;
+      text-align: center;
+    }
+
+    button {
+      margin-top: 30px;
+      padding: 12px 24px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #3e9441;
+    }
+
+    .error {
+      border-bottom: 2px solid red;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <p>
+      A nebyla sama na této pouti, neboť věrný společník ji provázel – <input type="text" id="slovo1"> její. A ten <input type="text" id="slovo2">, jenž dívku na její pouti provázel. 
+      Nebyl jen tak obyčejnou šelmou. Srdce měl vskutku laskavé a povahu vlídnou, avšak v žilách jeho kolovala krev divoká a pudy nezkrotné. 
+      Oči jeho plály žádostí a tlapy nesly známky síly neobvyklé, <input type="text" id="slovo3"> na nich byly statné a mocné. 
+      Ba i <input type="text" id="slovo4"> vládl kocour obratným a mrštným. 
+      Dokázal jím jemně zkoumati skryté kouty a zákoutí.
+    </p>
+    <p>
+      A tak se stalo, že dívka a její zvířecí společník spolu podnikali věci vskutku podivuhodné a neobvyklé, jež by oko běžného smrtelníka sotva pochopilo. 
+      Tajemství obestíralo jejich počínání a nikdo netušil, jaké zvláštní pouto je spojovalo a k jakým nevídaným činům se spolu odvažovali.
+    </p>
+    <button onclick="zkontroluj()">Pokračovat</button>
+  </div>
+
+  <script>
+    function zkontroluj() {
+      const sl1 = document.getElementById("slovo1");
+      const sl2 = document.getElementById("slovo2");
+      const sl3 = document.getElementById("slovo3");
+      const sl4 = document.getElementById("slovo4");
+
+      let spravne = true;
+
+      if (sl1.value.trim().toLowerCase() !== "kocour") { sl1.classList.add("error"); spravne = false; } else { sl1.classList.remove("error"); }
+      if (sl2.value.trim().toLowerCase() !== "kocour") { sl2.classList.add("error"); spravne = false; } else { sl2.classList.remove("error"); }
+      if (sl3.value.trim().toLowerCase() !== "prsty") { sl3.classList.add("error"); spravne = false; } else { sl3.classList.remove("error"); }
+      if (sl4.value.trim().toLowerCase() !== "jazykem") { sl4.classList.add("error"); spravne = false; } else { sl4.classList.remove("error"); }
+
+      if (spravne) {
+        window.location.href = "O.html"; // další stránka
+      }
+    }
+  </script>
+</body>
+</html>

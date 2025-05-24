@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Křížovka pro Tebe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Křížovka</h1>
+        
+        <div class="crossword-container">
+            <div class="clues">
+                <h2>Legenda:</h2>
+                <ol>
+                    <li>Rodové jméno mé oblíbené kytky</li>
+                    <li>Nejvíc "mad" slovo</li>
+                    <li>Kdy jsme se poprvé viděly? (měsíc)</li>
+                    <li>Nejhorší film</li>
+                    <li>Lila</li>
+                </ol>
+            </div>
+
+            <div class="crossword-grid">
+                <table>
+                    <tr id="word1">
+                        <td>1.</td>
+                        <td class="tajenka-letter"><input type="text" maxlength="1"></td>
+                        <td><input type="text" maxlength="1"></td>
+                        <td><input type="text" maxlength="1"></td>
+                        <td><input type="text" maxlength="1"></td>
+                        <td><input type="text" maxlength="1"></td>
+                        <td><input type="text" maxlength="1"></td>
+                        <td><input type="text" maxlength="1"></td>
+                        <td><input type="text" maxlength="1"></td>
+                        <td><input type="text" maxlength="1"></td>
+                    </tr>
+                    <tr id="word2">
+                        <td>2.</td>
+                        <td><input type="text" maxlength="1"></td>
+			<td><input type="text" maxlength="1"></td>
+                        <td class="tajenka-letter"><input type="text" maxlength="1"></td>
+                    </tr>
+                    <tr id="word3">
+                        <td>3.</td>
+                        <td><input type="text" maxlength="1"></td>
+                        <td><input type="text" maxlength="1"></td>
+                        <td><input type="text" maxlength="1"></td>
+                        <td class="tajenka-letter"><input type="text" maxlength="1"></td>
+                        <td><input type="text" maxlength="1"></td>
+                        <td><input type="text" maxlength="1"></td>
+                    </tr>
+                    <tr id="word4">
+                        <td>4.</td>
+                        <td class="tajenka-letter"><input type="text" maxlength="1"></td>
+                        <td><input type="text" maxlength="1"></td>
+                        <td><input type="text" maxlength="1"></td>
+                        <td><input type="text" maxlength="1"></td>
+                        <td><input type="text" maxlength="1"></td>
+                        <td><input type="text" maxlength="1"></td>
+                        <td><input type="text" maxlength="1"></td>
+                    </tr>
+                    <tr id="word5">
+                        <td>5.</td>
+                        <td><input type="text" maxlength="1"></td>
+                        <td><input type="text" maxlength="1"></td>
+                        <td><input type="text" maxlength="1"></td>
+                        <td><input type="text" maxlength="1"></td>
+                        <td><input type="text" maxlength="1"></td>
+                        <td class="tajenka-letter"><input type="text" maxlength="1"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="check-btn">Zkontrolovat</button>
+            <p id="result-message"></p>
+            <a href="gratulace.html" id="continue-btn" class="hidden">Pokračovat dál!</a>
+        </div>
+        
+        <div class="secret-word">
+            Tajenka: <span id="tajenka-result">?????</span>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
